@@ -1,7 +1,7 @@
 // ==UserScript==
 // @author       Bekkouche Eboubaker
 // @name         Ali express currency converter "DZ"
-// @version      1.1
+// @version      1.2
 // @match        https://*.aliexpress.com/*
 // @require      https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js
 // @updateURL    https://github.com/ZOLDIK0/Trash/raw/master/Ali%20express%20currency%20converter%20_DZ_.user.js
@@ -24,6 +24,19 @@ convertPrices();
      if(mode != "DZ" || !document){
          timer = setTimeout(convertPrices,1000);
          return;
+     }
+     if(window.location.href.includes("aliexpress.com/store")){
+         for(var e of document.querySelectorAll("[numberoflines='1']")){
+            let price = e.innerHTML;
+             if(!price.startsWith("€"))
+                continue;
+            if(!price.endsWith('DZ')){
+             oldelements.push({element:e,value:price});
+             e.innerHTML = e.innerHTML.substr(e.innerHTML.indexOf("-"));
+             e.innerHTML = ""+convert(price.replace(/[\$€\s.]/g,"").replace(",","."))+" DZ";
+             newelements.push({element:e,value:e.innerHTML});
+           }
+         }
      }
     for(var e of document.querySelectorAll(".current-price-util-left, .current-price, .crowd-price, .detail-price, .product-price-value, .line-limit-length > span:nth-child(1), .detail-oriprice, .amount-num, .product-amount >span:nth-child(1), .main-cost-price, .extend-price.del, .total-price>dl>dd, .charges-totle>dd, .charge-cost, .total-cost")){
         let price = e.innerHTML;
@@ -66,7 +79,7 @@ window.onkeydown = function(event){
         }
     }
     if(event.ctrlKey && event.altKey){
-        let val = window.prompt("Euro to DZ =?", "21300");
+        let val = window.prompt("Euro to DZ =?", euro_to_dz);
         if(val != (""+parseInt(val))){
            alert("Bad Value: " + val);
         }else{
@@ -78,4 +91,3 @@ window.onkeydown = function(event){
         }
     }
 }
-
