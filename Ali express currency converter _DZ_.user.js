@@ -38,7 +38,7 @@ convertPrices();
            }
          }
      }
-    for(var e of document.querySelectorAll(".current-price-util-left, .current-price, .crowd-price, .detail-price, .product-price-value, .line-limit-length > span:nth-child(1), .detail-oriprice, .amount-num, .product-amount >span:nth-child(1), .main-cost-price, .extend-price.del, .total-price>dl>dd, .charges-totle>dd, .charge-cost, .total-cost")){
+    for(var e of document.querySelectorAll(".sale-price, .original-price, .price, .list-price, .current-price-util-left, .current-price, .crowd-price, .detail-price, .product-price-value, .line-limit-length > span:nth-child(1), .detail-oriprice, .amount-num, .product-amount >span:nth-child(1), .main-cost-price, .extend-price.del, .total-price>dl>dd, .charges-totle>dd, .charge-cost, .total-cost")){
         let price = e.innerHTML;
         if(!price.endsWith('DZ')){
             oldelements.push({element:e,value:price});
