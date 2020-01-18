@@ -1,7 +1,7 @@
 // ==UserScript==
 // @author       Bekkouche Eboubaker
 // @name         Ali express currency converter "DZ"
-// @version      1.0
+// @version      1.1
 // @match        https://*.aliexpress.com/*
 // @require      https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js
 // @updateURL    https://github.com/ZOLDIK0/Trash/raw/master/Ali%20express%20currency%20converter%20_DZ_.user.js
