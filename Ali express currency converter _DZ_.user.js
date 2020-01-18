@@ -6,7 +6,7 @@
 // @require      https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js
 // ==/UserScript==
 
-let euro_to_dz = 21300;// change this if you need to.
+let euro_to_dz = 21300;// change this if you need to. but you won't be able to use ctrl+alt anymore
 
 
 let cookie = "sd6sd1v1s5d15a8asd8rey8t4y92vs5d1fdFFF";
