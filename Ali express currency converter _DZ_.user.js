@@ -7,7 +7,7 @@
 // @updateURL    https://github.com/ZOLDIK0/Trash/raw/master/Ali%20express%20currency%20converter%20_DZ_.user.js
 // ==/UserScript==
 
-let euro_to_dz = 21300;// change this if you need to.
+let euro_to_dz = 21300;// change this if you need to. but you won't be able to use ctrl+alt anymore
 
 
 let cookie = "sd6sd1v1s5d15a8asd8rey8t4y92vs5d1fdFFF";
