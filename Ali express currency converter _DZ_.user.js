@@ -38,12 +38,14 @@ convertPrices();
            }
          }
      }
-    for(var e of document.querySelectorAll(".sale-price, .original-price, .price, .list-price, .current-price-util-left, .current-price, .crowd-price, .detail-price, .product-price-value, .line-limit-length > span:nth-child(1), .detail-oriprice, .amount-num, .product-amount >span:nth-child(1), .main-cost-price, .extend-price.del, .total-price>dl>dd, .charges-totle>dd, .charge-cost, .total-cost")){
+    for(var e of document.querySelectorAll(".shipping-value, .price-current, .sale-price, .original-price, .price, .list-price, .current-price-util-left, .current-price, .crowd-price, .detail-price, .product-price-value, .line-limit-length > span:nth-child(1), .detail-oriprice, .amount-num, .product-amount >span:nth-child(1), .main-cost-price, .extend-price.del, .total-price>dl>dd, .charges-totle>dd, .charge-cost, .total-cost")){
         let price = e.innerHTML;
         if(!price.endsWith('DZ')){
             oldelements.push({element:e,value:price});
             e.innerHTML = e.innerHTML.substr(e.innerHTML.indexOf("-"));
-            e.innerHTML = ""+convert(price.replace(/[\$€\s.]/g,"").replace(",","."))+" DZ";
+            e.innerHTML = ""+convert(price.replace(/[A-Za-z\$€:\s.]/g,"").replace(",","."))+" DZ";
+            if(e.innerHTML == "NaNK DZ")
+                e.innerHTML = "Free Shipping";
             newelements.push({element:e,value:e.innerHTML});
         }
     }
