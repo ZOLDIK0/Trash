@@ -43,7 +43,12 @@ convertPrices();
         if(!price.endsWith('DZ')){
             oldelements.push({element:e,value:price});
             e.innerHTML = e.innerHTML.substr(e.innerHTML.indexOf("-"));
-            e.innerHTML = ""+convert(price.replace(/[A-Za-z\$€:\s.]/g,"").replace(",","."))+" DZ";
+            let add = "";
+            if(e.innerHTML!=price)
+                add= "min: ";
+            e.innerHTML = add+convert(price.replace(/[A-Za-z\$€:\s.]/g,"").replace(",","."))+" DZ";
+            if(price.startsWith("Shipping"))
+                e.innerHTML = "Shipping: " + e.innerHTML;
             if(e.innerHTML == "NaNK DZ")
                 e.innerHTML = "Free Shipping";
             newelements.push({element:e,value:e.innerHTML});
