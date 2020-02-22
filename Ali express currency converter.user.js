@@ -1,7 +1,8 @@
 // ==UserScript==
 // @author       Bekkouche Eboubaker
-// @name         Ali express currency converter "DZ"
-// @version      1.2
+// @name         Ali express currency converter
+// @description  converts euro to DZD in aliexpress.com, You can use hotkeys (alt+shift), (ctrl+alt)
+// @version      1.0
 // @match        https://*.aliexpress.com/*
 // @require      https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js
 // @updateURL    https://github.com/ZOLDIK0/Trash/raw/master/Ali%20express%20currency%20converter%20_DZ_.user.js
@@ -38,19 +39,12 @@ convertPrices();
            }
          }
      }
-    for(var e of document.querySelectorAll(".shipping-value, .price-current, .sale-price, .original-price, .price, .list-price, .current-price-util-left, .current-price, .crowd-price, .detail-price, .product-price-value, .line-limit-length > span:nth-child(1), .detail-oriprice, .amount-num, .product-amount >span:nth-child(1), .main-cost-price, .extend-price.del, .total-price>dl>dd, .charges-totle>dd, .charge-cost, .total-cost")){
+    for(var e of document.querySelectorAll(".current-price-util-left, .current-price, .crowd-price, .detail-price, .product-price-value, .line-limit-length > span:nth-child(1), .detail-oriprice, .amount-num, .product-amount >span:nth-child(1), .main-cost-price, .extend-price.del, .total-price>dl>dd, .charges-totle>dd, .charge-cost, .total-cost")){
         let price = e.innerHTML;
         if(!price.endsWith('DZ')){
             oldelements.push({element:e,value:price});
             e.innerHTML = e.innerHTML.substr(e.innerHTML.indexOf("-"));
-            let add = "";
-            if(e.innerHTML!=price)
-                add= "min: ";
-            e.innerHTML = add+convert(price.replace(/[A-Za-z\$€:\s.]/g,"").replace(",","."))+" DZ";
-            if(price.startsWith("Shipping"))
-                e.innerHTML = "Shipping: " + e.innerHTML;
-            if(e.innerHTML == "NaNK DZ")
-                e.innerHTML = "Free Shipping";
+            e.innerHTML = ""+convert(price.replace(/[\$€\s.]/g,"").replace(",","."))+" DZ";
             newelements.push({element:e,value:e.innerHTML});
         }
     }
@@ -98,3 +92,4 @@ window.onkeydown = function(event){
         }
     }
 }
+
