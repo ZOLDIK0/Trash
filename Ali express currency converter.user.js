@@ -1,11 +1,11 @@
 // ==UserScript==
-// @author       Bekkouche Eboubaker
+// @author       (ME) BA DO
 // @name         Ali express currency converter
 // @description  converts euro to DZD in aliexpress.com, You can use hotkeys (alt+shift), (ctrl+alt)
 // @version      1.0
 // @match        https://*.aliexpress.com/*
 // @require      https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js
-// @updateURL    https://github.com/ZOLDIK0/Trash/raw/master/Ali%20express%20currency%20converter%20_DZ_.user.js
+// @updateURL    https://github.com/ZOLDIK0/Trash/raw/master/Ali%20express%20currency%20converter.user.js
 // ==/UserScript==
 
 let euro_to_dz = 21300;// change this if you need to. but you won't be able to use ctrl+alt anymore
