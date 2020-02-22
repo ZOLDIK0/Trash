@@ -2,7 +2,7 @@
 // @author       ME (BA DO)
 // @name         Ali express currency converter
 // @description  converts euro to DZD in aliexpress.com,
-//               Make sure the currency is set to EUR or USD,
+//               Make sure the currency is set to EUR,
 //               You can use hotkeys (alt+shift), (ctrl+alt),
 //               You can add more currencies in the get_currency_parser() function,
 //               You can change the currency by modifying the variable 'currency_symbol'
@@ -15,7 +15,7 @@
 // changable variables
 let currency_convert_ratio = 21300;// change this if you need to. but you won't be able to use ctrl+alt anymore
 let target_currency_symbol = "DZ";
-let currency_symbol = '$';
+let currency_symbol = '€';
 function get_currency_parser(currency){
     let eur_currency_parser = function(price){
         return price.replace(/[^\d,]/g,"").replace(",",".");
