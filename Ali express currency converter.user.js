@@ -41,7 +41,7 @@ if(!Cookies.get(wlcm_cookie)||Cookies.get(wlcm_cookie)!="1"){
 }
 
 if(Cookies.get(currency_cookie)){
-    euro_to_dz = parseInt(Cookies.get(currency_cookie));
+    currency_convert_ratio = parseInt(Cookies.get(currency_cookie));
 }
 let revert = false;
 let oldelements = [];
