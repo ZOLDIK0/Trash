@@ -6,7 +6,7 @@
 //               You can use hotkeys (alt+shift), (ctrl+alt),
 //               You can add more currencies in the get_currency_parser() function,
 //               You can change the currency by modifying the variable 'currency_symbol'
-// @version      1.0
+// @version      1.1
 // @match        https://*.aliexpress.com/*
 // @require      https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js
 // @updateURL    https://github.com/ZOLDIK0/Trash/raw/master/Ali%20express%20currency%20converter.user.js
