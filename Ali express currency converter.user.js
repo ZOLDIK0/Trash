@@ -1,5 +1,5 @@
 // ==UserScript==
-// @author       Bekkouche Eboubaker
+// @author       ME (BA DO)
 // @name         Ali express currency converter
 // @description  converts euro to DZD in aliexpress.com,
 //               Make sure the currency is set to EUR or USD,
